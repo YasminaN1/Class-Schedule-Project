@@ -1,0 +1,51 @@
+[
+{
+    "className": "AP English Literature & Composition",
+    "teacher": "Mrs. Sciacca",
+    "roomNumber": "E121",
+    "period": "Period 1",
+    "subjectArea": "English"
+    },
+    {
+    "className": "Criminology & Law",
+    "teacher": "Mr. Wisniewski",
+    "roomNumber": "A105",
+    "period": "Period 2",
+    "subjectArea": "History"
+    },
+     {
+    "className": "AP Calculus AB",
+    "teacher": "Mr. Sandoval",
+    "roomNumber": "A219",
+    "period": "Period 3",
+    "subjectArea": "Math"
+    },
+    {
+    "className": "Honors Anatomy and Physiology",
+    "teacher": "Mrs. Carrione",
+    "roomNumber": "D202",
+    "period": "Period 4",
+    "subjectArea": "Science"
+    },
+    {
+    "className": "AP Biology",
+    "teacher": "Mrs. Carrione",
+    "roomNumber": "D202",
+    "period": "Period 5",
+    "subjectArea": "Science"
+    },     
+    {
+    "className": "Physical Ed 12 Lab",
+    "teacher": "Mrs. Scollo",
+    "roomNumber": "GYM",
+    "period": "Period 6",
+    "subjectArea": "Physical Education/Health"
+    },
+    {
+    "className": "Honors NJIT IS219 Advanced Website Development WDP",
+    "teacher": "Mr. Kilgore",
+    "roomNumber": "B111",
+    "period": "Period 7",
+    "subjectArea": "Technology"
+    }
+]

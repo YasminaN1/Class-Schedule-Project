@@ -1,0 +1,65 @@
+[
+    {
+        "className" : "Honors Precalculus",
+        "teacher" : "Mrs. Mullin",
+        "roomNumber" : "E211",
+        "period" : "1",
+        "subjectAre" : "Math"
+    },
+        {
+        "className" : "Study Hall",
+        "teacher" : "Mr. Walsh",
+        "roomNumber" : "C101",
+        "period" : "2",
+        "subjectAre" : "Gym"
+    },
+        {
+        "className" : "AP Environmental Science",
+        "teacher" : "Mrs. Tsakiris",
+        "roomNumber" : "E221",
+        "period" : "3",
+        "subjectAre" : "Science"
+    },
+        {
+        "className" : "BCC ENG121 The Writing Process",
+        "teacher" : "Mr. Sauter",
+        "roomNumber" : "E111",
+        "period" : "4",
+        "subjectAre" : "English"
+    },
+          {
+        "className" : "BCC ENG155 The Short Story",
+        "teacher" : "Mr. Sauter",
+        "roomNumber" : "E111",
+        "period" : "4",
+        "subjectAre" : "English"
+    },
+        {
+        "className" : "AP Computer Science A",
+        "teacher" : "Mrs. Rehwinkel",
+        "roomNumber" : "A234",
+        "period" : "5",
+        "subjectAre" : "Computer Science"
+    },
+        {
+        "className" : "Financial Literacy",
+        "teacher" : "Mr. Morgan",
+        "roomNumber" : "A132",
+        "period" : "6",
+        "subjectAre" : "Business"
+    },
+        {
+        "className" : "Fine Art 1",
+        "teacher" : "Mrs. Rucci",
+        "roomNumber" : "D103",
+        "period" : "6",
+        "subjectAre" : "Art"
+    },
+        {
+        "className" : "Honors NJIT IS219 Advanced Website Development WDP",
+        "teacher" : "Mr. Kilgore",
+        "roomNumber" : "B111",
+        "period" : "7",
+        "subjectAre" : "Web Design"
+    }
+]
