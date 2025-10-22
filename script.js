@@ -1,8 +1,8 @@
 // Find the dropdown menu where you pick a friend
 const selector = document.getElementById("friendSelector");
-// DOM Element Reference - Find the dropdown to filter by subject (like Math, English, etc.)
+// DOM Element Reference - Find the dropdown to filter by subject 
 const subjectFilter = document.getElementById("filter-subject");
-// DOM Element Reference - Find the dropdown to filter by period (like Period 1, Period 2, etc.)
+// DOM Element Reference - Find the dropdown to filter by period 
 const periodFilter = document.getElementById("filter-period");
 // DOM Element Reference - Find the box on the page where we'll show all the classes
 const container = document.getElementById("scheduleContainer");
@@ -18,15 +18,15 @@ let currentData = [];
 
 // Function - This fills up the filter dropdowns with choices
 function populateFilters(data) {
-  // String (HTML) - Clear ut the old choices and add the  Filter by Subjec option
+  // String  - Clear ut the old choices and add the  Filter by Subjec option
   subjectFilter.innerHTML = `<option value="">Filter by Subject</option>`;
-  // String (HTML) - Clear out the old choices and add the  Filter by Periodoption
+  // String html - Clear out the old choices and add the  Filter by Periodoption
   periodFilter.innerHTML = `<option value="">Filter by Period</option>`;
 
   const subjects = new Set();
   const periods = new Set();
 
-  // Loop (forEach) - Look at every singe class in the schedule
+  // Loop  - Look at every singe class in the schedule
   data.forEach((item) => {
     // String - Put the subject in our subjects area 
     subjects.add(item.subjectArea || item.subjectAre || "General");
@@ -71,7 +71,7 @@ function renderSchedule(data) {
     return;
   }
 
-  // DOM Element - Make a new bx to hold all the class cards
+  // OM Element - Make a new bx to hold all the class cards
   const cardsContainer = document.createElement("div");
   // String - Give it a class name for styling
   cardsContainer.className = "schedule-cards";
@@ -100,13 +100,13 @@ function renderSchedule(data) {
   container.appendChild(cardsContainer);
 }
 
-// Async part - This goes and gets the schedule from fiel
+// ASYNC PART - This goes and gets the schedule from fiel
 async function loadSchedule(fileName) {
 
   try {
-    // Go get the file from the json folder 
+    // the file from the json folder 
     const response = await fetch(`./json/${fileName}`);
-    //  (JSON) - Read what's inside the file and turn it into a list of clases
+    //  JSON - Read what's inside the file and turn it into a list of clases
     const data = await response.json();
 
     currentData = data;
@@ -125,7 +125,7 @@ function applyFilters() {
   // String - See what period the user picked 
   const period = periodFilter.value;
 
-  // Array (filter method) - Go through all the classes and only keep the ones that match the filters
+  // Array (filter way) - Go through all the classes and only keep the ones that match the filters
   const filtered = currentData.filter((item) => {
     // String - Get the subject of this class
     const itemSubject = item.subjectArea || item.subjectAre || "General";
