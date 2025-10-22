@@ -18,15 +18,15 @@ let currentData = [];
 
 // Function - This fills up the filter dropdowns with choices
 function populateFilters(data) {
-  // String (HTML) - Clear out the old choices and add the default "Filter by Subject" option
+  // String (HTML) - Clear ut the old choices and add the  Filter by Subjec option
   subjectFilter.innerHTML = `<option value="">Filter by Subject</option>`;
-  // String (HTML) - Clear out the old choices and add the default "Filter by Period" option
+  // String (HTML) - Clear out the old choices and add the  Filter by Periodoption
   periodFilter.innerHTML = `<option value="">Filter by Period</option>`;
 
   const subjects = new Set();
   const periods = new Set();
 
-  // Loop (forEach) - Look at every single class in the schedule
+  // Loop (forEach) - Look at every singe class in the schedule
   data.forEach((item) => {
     // String - Put the subject in our subjects area 
     subjects.add(item.subjectArea || item.subjectAre || "General");
@@ -34,7 +34,7 @@ function populateFilters(data) {
     periods.add(item.period);
   });
 
-  // Array & Loop - Turn the subjects area into a list, sort it alphabetically, and add each one as a choice
+  // Array & Loop - Turn the subjects area into a ist, sort it alphabetically, and add each one as a choice
   [...subjects].sort().forEach((s) => {
     // DOM Element - Create a new dropdown option
     const opt = document.createElement("option");
@@ -46,7 +46,7 @@ function populateFilters(data) {
     subjectFilter.appendChild(opt);
   });
 
-  // Array & Loop - Turn the periods area into a list sort it in order and add each one as a choic
+  // Array & Loop - Turn the peiods area into a list sort it in order and add each one as a choic
   [...periods].sort().forEach((p) => {
     // DOM Element - Create a new dropdown option
     const opt = document.createElement("option");
@@ -61,24 +61,24 @@ function populateFilters(data) {
 
 // Function - This shows all the class cards on the screen
 function renderSchedule(data) {
-  // String (HTML) - Erase everything that was on the screen before
+  // String - Erase everything that was on the screen before
   container.innerHTML = "";
 
-  // Number - If there are no classes to show, display a message
+  //If there are no classes to showdisplay a message 
   if (data.length === 0) {
-    // String (HTML) - Show "no results" message
-    container.innerHTML = '<div class="no-results">No classes match the selected filters.</div>';
+    // String - Show no result message
+    container.innerHTML = '<div class="no-results">No class match the filters.</div>';
     return;
   }
 
-  // DOM Element - Make a new box to hold all the class cards
+  // DOM Element - Make a new bx to hold all the class cards
   const cardsContainer = document.createElement("div");
   // String - Give it a class name for styling
   cardsContainer.className = "schedule-cards";
 
-  // Loop (forEach) - Go through each class 
+  // Loop - Go through each class 
   data.forEach((item) => {
-    // String (Template Literal) - This is the HTML code for one class card 
+    //  Temple Literal - This is the HTML code for one class card 
     const cardHTML = `
       <div class="schedule-card">
         <span class="period-badge">${item.period}</span>
@@ -100,13 +100,13 @@ function renderSchedule(data) {
   container.appendChild(cardsContainer);
 }
 
-// Async Function - This goes and gets the schedule from fiel
+// Async part - This goes and gets the schedule from fiel
 async function loadSchedule(fileName) {
 
   try {
     // Go get the file from the json folder 
     const response = await fetch(`./json/${fileName}`);
-    // Array (JSON) - Read what's inside the file and turn it into a list of clases
+    //  (JSON) - Read what's inside the file and turn it into a list of clases
     const data = await response.json();
 
     currentData = data;
@@ -115,14 +115,6 @@ async function loadSchedule(fileName) {
     // Function  show all the classes on the screen
     renderSchedule(currentData);
   } catch (err) {
-    // // Error Object - Oops! Something went wrong. Show an error message
-    // console.error(err);
-    // // String (HTML) - Display error message on the page
-    // container.innerHTML = `
-    //   <div class="error-message">
-    //      Error loading schedule: ${err.message}
-    //   </div>
-    // `;
   }
 }
 
@@ -139,9 +131,9 @@ function applyFilters() {
     const itemSubject = item.subjectArea || item.subjectAre || "General";
     // Boolean - If this class match the subject filter
     const matchSubject = subject ? itemSubject === subject : true;
-    // Boolean - if this class match the period fiter
+    // if this class match the period fiter
     const matchPeriod = period ? item.period === period : true;
-    // Boolean - Only keep this class if it matches both filters
+    //  Only keep this class if it matches both filters
     return matchSubject && matchPeriod;
   });
 
@@ -149,14 +141,14 @@ function applyFilters() {
   renderSchedule(filtered);
 }
 
-// Event Listener - Listen for when someone picks a different friend from the dropdown
+// Event Listener - Listen for when soeone picks a diffrent friend from the dropdown
 selector.addEventListener("change", () => {
   // String - Find out which friend they piced
   const selected = selector.value;
   // String - Look up that friend's file name
   const fileName = schedules[selected];
   
-  // Conditional (if statement) - If they picked a real friend (not the Flter by Friend option)
+  // Conditional (if statement) - If they pickd a real friend (not the Flter by Friend option)
   if (fileName) {
     // String - Clear any filters they had selected
     subjectFilter.value = "";
@@ -166,11 +158,11 @@ selector.addEventListener("change", () => {
   }
 });
 
-// Event Listener - Listen for when someone changes the subject filter
+// Event Listener - Listen for when someone changs the subject filter
 subjectFilter.addEventListener("change", applyFilters);
 
-// Event Listener - Listen for when someone changes the period filter
+// Event Listener - Listen for when someone chanes the period filter
 periodFilter.addEventListener("change", applyFilters);
 
-// String (HTML) - Show a message telling them to pick a friend to get started
+// Strin- Show a message telling them to pick a frind to get started
 container.innerHTML = '<div class="loading">Select a student!</div>';
